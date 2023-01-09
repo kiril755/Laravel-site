@@ -7,9 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('home');
+    return view('about');
 });
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/contact', function () {
+    return view('contact ');
 });
