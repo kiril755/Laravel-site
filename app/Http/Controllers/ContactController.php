@@ -16,6 +16,12 @@ class ContactController extends Controller {
 
         $contact->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Сообщение было добавлено!');
+    }
+
+    public function allData() {
+        $contact = new Contact;
+        //$contact->orderBy('id', 'asc')->skip(1)->take(1)->get()
+        return view('message', ['data' => $contact->where('subject', '=', 'hello')->get()]);
     }
 }
