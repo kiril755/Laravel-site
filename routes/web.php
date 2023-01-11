@@ -15,5 +15,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+Route::get('/contact/all/{id}', 'App\Http\Controllers\ContactController@showOneMessage')->name('contact-data-one');
+Route::get('/contact/all/{id}/update', 'App\Http\Controllers\ContactController@updateMessage')->name('contact-update');
 Route::get('/contact/all', 'App\Http\Controllers\ContactController@allData')->name('contact-data');
 Route::post('/contact/submit', 'App\Http\Controllers\ContactController@submit')->name('contact-form');

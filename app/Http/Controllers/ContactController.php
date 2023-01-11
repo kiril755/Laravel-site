@@ -22,6 +22,18 @@ class ContactController extends Controller {
     public function allData() {
         $contact = new Contact;
         //$contact->orderBy('id', 'asc')->skip(1)->take(1)->get()
-        return view('message', ['data' => $contact->where('subject', '=', 'hello')->get()]);
+        return view('message', ['data' => $contact->all()]);
+    }
+
+    public function showOneMessage($id) {
+        $contact = new Contact;
+
+        return view('one-message', ['data' => $contact->find($id)]);
+    }
+
+    public function updateMessage($id) {
+        $contact = new Contact;
+
+        return view('update-message', ['data' => $contact->find($id)]);
     }
 }

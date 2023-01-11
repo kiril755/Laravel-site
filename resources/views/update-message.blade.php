@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title-block')Контакты@endsection
+@section('title-block')Обновление записи@endsection
 
 @section('content')
-    <h1>Страница контактов</h1>
+    <h1>Обновление записи</h1>
 
     <form action="{{ route('contact-form') }}" method="post">
         @csrf 
